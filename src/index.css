@@ -55,3 +55,7 @@ div.checker {
   width: 100%;
   font-weight: bold;
 }
+
+[contenteditable] {
+  outline: 1px solid transparent;
+}

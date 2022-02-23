@@ -3,6 +3,7 @@
 # To-Do-list-Application
 
 ![screenshot](./images/Screenshoot.PNG)
+![screenshot](./images/Screenshoot-1.PNG)
 
 > This is a team project in the Microverse second Module. The project is a To-Do-List application  were you are able to add and remove and mark completed tasks 
 
@@ -11,6 +12,12 @@ Our goal here is to Build a To-do list application with add, remove and checked 
 #### Cloning the project
 ```
 git clone https://github.com/Abenezer-Tilahun/To-Do-list-Application.git<Your-Build-Directory>
+
+cd To-Do-list-Application
+
+npm install
+
+npm run start
 ```
 
 ## Getting packages and debuging with Stylelint
