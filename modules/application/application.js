@@ -1,4 +1,4 @@
-class Application {
+export default class Application {
   constructor() {
     this.domList = document.querySelector('.todo-list');
     this.todoList = [{ index: 0, description: 'Set up project', completed: true },
