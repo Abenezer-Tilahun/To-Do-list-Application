@@ -13,7 +13,6 @@ body {
   margin: 5px 0;
   border-radius: 0;
   background: #f7f7f7;
-  font-weight: bold;
 }
 
 .add-task {
@@ -53,5 +52,8 @@ div.checker {
 
 .custom-btn {
   width: 100%;
-  font-weight: bold;
+}
+
+[contenteditable] {
+  outline: 1px solid transparent;
 }
