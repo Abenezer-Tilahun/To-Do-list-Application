@@ -4,10 +4,12 @@ class Application {
     this.domList = document.querySelector('.todo-list');
     this.todoList = [];
   }
+
   initApp = () => {
     this.onLoadList();
     this.updateDom();
   }
+
   updateDom = () => {
     const ref = this;
     this.domList.innerHTML = '';
@@ -17,11 +19,12 @@ class Application {
         completed = 'done-task';
       }
       ref.domList.innerHTML = `${ref.domList.innerHTML} <li class="todo-item">
-      <div class="checker"><span class=""><input class="list-check-${element.index}" type="checkbox"></span></div>
+      <div class="checker"><span class=""><input class="list-check-${element.index} action_check" type="checkbox"></span></div>
       <span class="${completed} desc" contentEditable="true">${element.description}</span>
       <i class="fa fa-trash-o float-right delete"></i>
       </li>`;
     }, ref);
+
     this.todoList.forEach((element) => {
       const checkList = document.querySelector(`.list-check-${element.index}`);
       checkList.checked = false;
@@ -31,11 +34,13 @@ class Application {
     });
     this.eventDispatcher();
   }
+
   eventDispatcher = () => {
     this.onclickeventDispatcher();
     this.onsubmiteventDispatcher();
     this.onediteventDispatcher();
   }
+
   onclickeventDispatcher = () => {
     const buttons = document.querySelectorAll('.delete');
     const ref = this;
@@ -58,35 +63,67 @@ class Application {
       button.index = index;
       button.ref = ref;
     }, ref);
+
+    const checks = document.querySelectorAll('.action_check');
+    checks.forEach((check, index) => {
+      check.addEventListener('click', (event) => {
+        const refObj = event.currentTarget;
+        if (refObj.ref.todoList[refObj.index].completed) {
+          refObj.ref.todoList[refObj.index].completed = false;
+        } else {
+          refObj.ref.todoList[refObj.index].completed = true;
+        }
+        refObj.ref.onSaveList();
+        ref.updateDom();
+      });
+      check.index = index;
+      check.ref = ref;
+    }, ref);
+
+    const clearBtn = document.querySelector('.custom-btn');
+    clearBtn.addEventListener('click', (event) => {
+      const refObj = event.currentTarget;
+      const filteredTasks = refObj.ref.todoList.filter((item) => {
+        const state = item.completed === false;
+        return state;
+      });
+      refObj.ref.todoList = filteredTasks;
+      refObj.ref.onSaveList();
+      ref.updateDom();
+    });
+    clearBtn.ref = this;
   }
+
   onsubmiteventDispatcher = () => {
     this.addTask.addEventListener('keyup', (event) => {
       if (event.keyCode !== 13) {
         return;
       }
-      const input = event.currentTarget.ref.addTask.value;
+
+      const refObj = event.currentTarget;
+      const input = refObj.ref.addTask.value;
       if (!input.replace(/\s/g, '').length || input.length <= 0) {
         return;
       }
 
       if (event.keyCode === 13) {
-        event.currentTarget.ref.todoList.push({
-          index: (event.currentTarget.ref.todoList.length + 1), description: input, completed: false,
+        refObj.ref.todoList.push({
+          index: (refObj.ref.todoList.length + 1), description: input, completed: false,
         });
-
-        event.currentTarget.ref.onSaveList();
-        event.currentTarget.ref.addTask.value = '';
+        refObj.ref.onSaveList();
+        refObj.ref.addTask.value = '';
       }
-      event.currentTarget.ref.updateDom();
+      refObj.ref.updateDom();
       event.preventDefault();
     });
     this.addTask.ref = this;
   }
+
   onediteventDispatcher = () => {
     const ref = this;
     const listDesc = document.querySelectorAll('.desc');
     listDesc.forEach((desc, index) => {
-      desc.addEventListener('keyup', (event) => {    
+      desc.addEventListener('keyup', (event) => {
         if (event.keyCode !== 13) {
           return;
         }
@@ -98,6 +135,7 @@ class Application {
         if (!input.replace(/\s/g, '').length || input.length <= 0) {
           return;
         }
+
         if (refObj.value.innerHTML !== refObj.ref.todoList[refObj.index].description) {
           refObj.value.innerHTML = input.replace('<br>', '');
           refObj.ref.todoList[refObj.index].description = refObj.value.innerHTML;
@@ -110,9 +148,11 @@ class Application {
       desc.value = desc;
     }, ref);
   }
+
   onSaveList = () => {
     localStorage.setItem('application_config', JSON.stringify(this.todoList));
   }
+  
   onLoadList = () => {
     if (localStorage.getItem('application_config') != null) {
       this.todoList = JSON.parse(localStorage.getItem('application_config'));
