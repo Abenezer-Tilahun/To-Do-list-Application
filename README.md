@@ -18,6 +18,7 @@ cd To-Do-list-Application
 npm install
 
 npm run start
+```
 
 ## Getting packages and debuging with Stylelint
 ```
