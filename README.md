@@ -13,36 +13,11 @@ Our goal here is to Build a To-do list application with add, remove and checked 
 ```
 git clone https://github.com/Abenezer-Tilahun/To-Do-list-Application.git<Your-Build-Directory>
 
-## Getting packages and debuging with Stylelint
-```
-npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-```
-##### For validation detection using Stylelint Run
-```
-npx stylelint "**/*.{css,scss}"
-```
-##### from parent source directory
+cd To-Do-list-Application
 
-## Getting packages and debuging with ESlint
-```
-npm install npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
-```
-##### For validation detection using Stylelint Run
-```
-npx eslint .
-```
-##### from parent source directory
+npm install
 
-## Getting packages and debuging with Webhint
-```
-npm init -y
-npm install --save-dev hint@6.x
-```
-##### For validation detection using Webhint Run
-```
-npx hint .
-```
-##### from parent source directory
+npm run start
 
 ## Getting packages and debuging with Stylelint
 ```
