@@ -49,6 +49,17 @@ class Application {
     return localArray.lists[index].description
 	}
 
+  updateCompleted = (index, status) => {
+    const localArray = this.onLoadList()
+   	localArray.forEach((lists, i) => {
+			if (index < localArray.length) {
+        lists[index].completed ==! status;
+			}
+		})
+		this.onSaveList()
+		return localArray.lists[index].completed
+  }
+
 	updateDom = () => {
 		const ref = this
 		this.domList.innerHTML = ''
