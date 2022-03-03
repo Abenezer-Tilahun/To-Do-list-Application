@@ -1,2 +1,3 @@
 dist/main.js
 modules/application/application.js
+modules/application/application.test.js
