@@ -49,6 +49,14 @@ npm install --save-dev hint@6.x
 ```
 npx hint .
 ```
+## Unit Testing
+
+You can find each unit test cases in the Test folder located in the parent source directory of the project. you can create your own custom unit test and test it by running
+
+```
+npx run test
+```
+This should run all unit test found in the application.test.js from the Test folder.
 
  ## 🤝 Contributing
 
