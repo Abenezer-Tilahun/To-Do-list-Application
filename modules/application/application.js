@@ -60,6 +60,13 @@ class Application {
 		return localArray.lists[index].completed
   }
 
+  clearCompleted = (index) => {
+    const localArray = this.onLoadList()
+    localArray = localArray.filter((lists, i) => lists[index].completed = false)
+    this.onSaveList(localArray)
+    this.updateDom()
+  }
+
 	updateDom = () => {
 		const ref = this
 		this.domList.innerHTML = ''
