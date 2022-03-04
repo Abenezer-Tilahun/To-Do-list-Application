@@ -70,6 +70,12 @@ Feel free to check the [issues page](../../issues/).
 - Twitter: [@twitterhandle](https://twitter.com/AbenezerTilah11)
 - LinkedIn: [LinkedIn](linkedin.com/in/abenezer-tilahun-4b4b43137)
 
+👤 **Author1**
+
+- GitHub: [@githubhandle](https://github.com/vickymarz)
+- Twitter: [@twitterhandle](https://twitter.com/Vicky_mars)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/okoroji-victor-ebube-8791741a0/)
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
