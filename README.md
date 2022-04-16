@@ -2,12 +2,44 @@
 
 # To-Do-list-Application
 
+> This is a team project in the Microverse second Module. The project is a To-Do-List application  were you are able to add and remove and mark completed tasks 
+
 ![screenshot](./images/Screenshoot.PNG)
 ![screenshot](./images/Screenshoot-1.PNG)
 
-> This is a team project in the Microverse second Module. The project is a To-Do-List application  were you are able to add and remove and mark completed tasks 
-
 Our goal here is to Build a To-do list application with add, remove and checked feature from scratch using JavaScripts Click [here](https://abenezer-tilahun.github.io/To-Do-list-Application/) to get a live preview of the project
+
+# Features implemented so far are:
+
+- Responsive HTML page
+- Integrated webpack
+- dynamic to-do list dom manipulation
+- Add a task to list [Hit enter key to add a new task]
+- Edit a task to list [this is done on editable and hit enter key to save to list]
+- Save current state to local-storage.
+- Addition of unit test using Jest.
+
+# Built With
+
+- Lighthouse (An open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more).
+- Webhint (A customizable linting tool that helps you improve your site's accessibility, speed, cross-browser compatibility, and more by checking your code for best practices and common errors).
+- Stylelint (A mighty, modern linter that helps you avoid errors and enforce conventions in your styles).
+- ESlint (A mighty, modern linter that helps you avoid errors and enforce conventions in JavaScript codes)
+- Webpack (Used for bundling JavaScript files for usage in a browser)
+- Jest (A JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It allows you to write tests with an approachable, familiar and feature-rich API that gives you results quickly.)
+
+To get a local copy up and running follow these simple example steps.
+
+
+# Prerequisites
+
+The basic requirements for building the executable are:
+
+- A working browser application (Google chrome, Mozilla Fire fox, Microsoft edge ...)
+- VSCode or any other equivalent code editor
+- Node Package Manager (For installing packages like Lighthous, webhint & stylelint used for checking for debugging bad codes before deployment)
+
+# Getting Started
 
 #### Cloning the project
 ```
@@ -57,7 +89,6 @@ You can find each unit test cases in the Test folder located in the parent sourc
 npx run test
 ```
 This should run all unit test found in the application.test.js from the Test folder.
-
  ## 🤝 Contributing
 
 Feel free to check the [issues page](../../issues/).
@@ -83,7 +114,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse
-- My coding partners(@usorfaitheloho ))
+- My coding partners(@vickymarz)
 
 ## 📝 License
 
